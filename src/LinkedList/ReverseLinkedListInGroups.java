@@ -27,10 +27,10 @@ public class ReverseLinkedListInGroups {
 		}
 	}
 
-	private static SinglyLinkedList.Node reverseAlternateNode(SinglyLinkedList.Node head, int k) {
-		if (head == null)
+	private static SinglyLinkedList.Node reverseAlternateNode(SinglyLinkedList.Node node, int k) {
+		if (node == null)
 			return new SinglyLinkedList.Node<>();
-		SinglyLinkedList.Node current = head;
+		SinglyLinkedList.Node current = node;
 		SinglyLinkedList.Node prev;
 		SinglyLinkedList.Node next = null;
 		prev = null;
@@ -43,8 +43,10 @@ public class ReverseLinkedListInGroups {
 			count++;
 		}
 		if (next != null) {
-			head.next = reverseAlternateNode(next, k);
+			//node.next will be set to prev of the reversed list
+			node.next = reverseAlternateNode(next, k);
 		}
+		//prev is new head of the input list
 		return prev;
 	}
 }
