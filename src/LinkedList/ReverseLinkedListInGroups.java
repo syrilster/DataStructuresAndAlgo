@@ -4,7 +4,7 @@ package LinkedList;
  * @author ssadasivan
  * @since 4/4/2017.
  */
-public class ReverseAlternateKNode {
+public class ReverseLinkedListInGroups {
 
 	public static void main(String[] args) {
 		SinglyLinkedList<Integer> listOne = new SinglyLinkedList<>();
