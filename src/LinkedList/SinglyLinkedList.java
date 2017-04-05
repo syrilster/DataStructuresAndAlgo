@@ -14,6 +14,13 @@ public class SinglyLinkedList<E> {
 	}
 
 	public static class Node<E> {
+		public Node() {
+		}
+
+		public Node(E data) {
+			this.data = data;
+		}
+
 		Node<E> next;
 		E data;
 	}
