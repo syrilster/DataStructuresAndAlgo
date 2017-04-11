@@ -1,10 +1,12 @@
-package Tree;
+package Tree.BinaryTree;
+
+import Tree.BinarySearchTree.BinarySearchTree;
 
 /**
  * @author ssadasivan
  * @since 4/10/2017.
  */
-public class MinDepthOfBST {
+public class MinDepthOfTree {
 	public static void main(String[] args) {
 		BinarySearchTree tree = new BinarySearchTree();
 		tree.insert(20);

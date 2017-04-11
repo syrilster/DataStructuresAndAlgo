@@ -1,4 +1,4 @@
-package Tree;
+package Tree.BinarySearchTree;
 
 /**
  * @author ssadasivan

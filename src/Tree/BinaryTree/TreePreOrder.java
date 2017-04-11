@@ -1,10 +1,12 @@
-package Tree;
+package Tree.BinaryTree;
+
+import Tree.BinarySearchTree.BinarySearchTree;
 
 /**
  * @author ssadasivan
  * @since 4/9/2017.
  */
-public class BSTPreOrder {
+public class TreePreOrder {
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
 		bst.insert(20);

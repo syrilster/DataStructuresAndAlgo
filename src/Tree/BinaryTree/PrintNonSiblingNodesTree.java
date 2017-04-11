@@ -1,10 +1,12 @@
-package Tree;
+package Tree.BinaryTree;
+
+import Tree.BinarySearchTree.BinarySearchTree;
 
 /**
  * Given a binary tree, write a program to print all nodes of that tree which do not have sibling nodes.
  * For example in the following tree, nodes 6, 8, 5, 7 are such nodes because for all of these nodes parent node has only one child.
  */
-public class PrintNonSiblingNodesBST {
+public class PrintNonSiblingNodesTree {
 	public static void main(String[] args) {
 		BinarySearchTree tree = new BinarySearchTree();
 		tree.insert(20);
@@ -17,7 +19,6 @@ public class PrintNonSiblingNodesBST {
 		tree.insert(8);
 		tree.insert(9);
 		printNonSiblingNodesBST(tree.root);
-		// tree.printLeftViewLevelOrder(tree.root);
 	}
 
 	private static void printNonSiblingNodesBST(BinarySearchTree.Node node) {

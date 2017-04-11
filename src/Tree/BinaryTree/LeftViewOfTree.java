@@ -1,4 +1,6 @@
-package Tree;
+package Tree.BinaryTree;
+
+import Tree.BinarySearchTree.BinarySearchTree;
 
 /**
  * If we do a level order traversal of tree such that the left most node of each level is visited before all other nodes in that level then all we
@@ -6,7 +8,7 @@ package Tree;
  * from left end to right end and keeping track of max-level seen so far to find out when the new level starts. As soon as we find out that the new
  * level has started, we print out the current node that is being visited.
  */
-public class LeftViewOfBST {
+public class LeftViewOfTree {
 	public static int maxLevelSeenSoFar = -1;
 
 	public static void main(String[] args) {
@@ -21,7 +23,6 @@ public class LeftViewOfBST {
 		tree.insert(8);
 		tree.insert(9);
 		printLeftView(tree.root, 0);
-		// tree.printLeftViewLevelOrder(tree.root);
 	}
 
 	private static void printLeftView(BinarySearchTree.Node node, int currentLevel) {

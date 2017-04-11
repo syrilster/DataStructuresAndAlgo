@@ -1,10 +1,12 @@
-package Tree;
+package Tree.BinaryTree;
+
+import Tree.BinarySearchTree.BinarySearchTree;
 
 /**
  * @author ssadasivan
  * @since 4/9/2017.
  */
-public class BSTPostOrder {
+public class TreeInOrder {
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
 		bst.insert(20);
@@ -14,15 +16,15 @@ public class BSTPostOrder {
 		bst.insert(25);
 		bst.insert(5);
 		bst.insert(15);
-		printPostOrder(bst.root);
+		printInOrder(bst.root);
 	}
 
-	private static void printPostOrder(BinarySearchTree.Node node) {
+	private static void printInOrder(BinarySearchTree.Node node) {
 		if(node == null){
 			return;
 		}
-		printPostOrder(node.getLeft());
-		printPostOrder(node.getRight());
+		printInOrder(node.getLeft());
 		System.out.print(node.getData() + " ");
+		printInOrder(node.getRight());
 	}
 }

@@ -1,4 +1,6 @@
-package Tree;
+package Tree.BinaryTree;
+
+import Tree.BinarySearchTree.BinarySearchTree;
 
 /**
  * The solution to this problem is as simple as traversing the complete tree using any traversal method in order to visit all nodes and checking if a
