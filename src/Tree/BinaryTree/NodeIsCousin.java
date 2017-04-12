@@ -1,12 +1,14 @@
 package Tree.BinaryTree;
 
+import Tree.BinarySearchTree.BinarySearchTree;
+
 /**
  * Created by Syril on 12-04-2017.
  */
-public class NodeAtKDistanceFromRoot {
+public class NodeIsCousin {
     Node root;
     public static void main(String[] args) {
-        NodeAtKDistanceFromRoot tree = new NodeAtKDistanceFromRoot();
+        NodeIsCousin tree = new NodeIsCousin();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
@@ -16,18 +18,13 @@ public class NodeAtKDistanceFromRoot {
         tree.root.right.left = new Node(6);
         tree.root.right.right = new Node(7);
         tree.root.right.left.right = new Node(8);
-        printKDistant(tree.root, 2);
+            if (tree.isCousin(tree.root, new Node(3), new Node(5)))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
     }
 
-    private static void printKDistant(Node node, int k) {
-        if (node == null) {
-            return;
-        }
-        if (k == 0) {
-            System.out.print(node.getData() + " ");
-        } else {
-            printKDistant(node.left, k - 1);
-            printKDistant(node.right, k - 1);
-        }
+    private boolean isCousin(Node root, Node node, Node node1) {
+        return false;
     }
 }
