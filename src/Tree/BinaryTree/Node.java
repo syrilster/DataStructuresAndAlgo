@@ -5,6 +5,7 @@ package Tree.BinaryTree;
  */
 public class Node {
     private int data;
+    private int level;
     public Node left;
     public Node right;
 
@@ -18,5 +19,13 @@ public class Node {
 
     public void setData(int data) {
         this.data = data;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }
