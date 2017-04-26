@@ -21,17 +21,17 @@ public class PrintNonSiblingNodesTree {
 		printNonSiblingNodesBST(tree.root);
 	}
 
-	private static void printNonSiblingNodesBST(BinarySearchTree.Node node) {
+	private static void printNonSiblingNodesBST(Tree.BinarySearchTree.Node node) {
 		if (node == null) {
 			return;
 		}
-		if (node.getLeft() == null && node.getRight() != null) {
-			System.out.print(node.getRight().getData() + " ");
+		if (node.left == null && node.right != null) {
+			System.out.print(node.right.getData() + " ");
 		}
-		if (node.getRight() == null && node.getLeft() != null) {
-			System.out.print(node.getLeft().getData() + " ");
+		if (node.right == null && node.left != null) {
+			System.out.print(node.left.getData() + " ");
 		}
-		printNonSiblingNodesBST(node.getLeft());
-		printNonSiblingNodesBST(node.getRight());
+		printNonSiblingNodesBST(node.left);
+		printNonSiblingNodesBST(node.right);
 	}
 }

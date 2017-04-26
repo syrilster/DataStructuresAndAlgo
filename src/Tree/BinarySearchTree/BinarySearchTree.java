@@ -7,40 +7,6 @@ package Tree.BinarySearchTree;
 public class BinarySearchTree {
 	public Node root;
 
-	public class Node {
-		private Node left;
-		private Node right;
-		private int data;
-
-		public Node(int data) {
-			this.data = data;
-		}
-
-		public Node getLeft() {
-			return left;
-		}
-
-		public void setLeft(Node left) {
-			this.left = left;
-		}
-
-		public Node getRight() {
-			return right;
-		}
-
-		public void setRight(Node right) {
-			this.right = right;
-		}
-
-		public int getData() {
-			return data;
-		}
-
-		public void setData(int data) {
-			this.data = data;
-		}
-	}
-
 	public void insert(int data) {
 		root = put(root, data);
 	}
@@ -49,7 +15,7 @@ public class BinarySearchTree {
 		if (root == null) {
 			return new Node(data);
 		}
-		if (data <= root.data) {
+		if (data <= root.getData()) {
 			root.left = put(root.left, data);
 		} else {
 			root.right = put(root.right, data);
@@ -57,8 +23,17 @@ public class BinarySearchTree {
 		return root;
 	}
 
+	public static void printInorder(Node root) {
+		if(root == null) {
+			return;
+		}
+		printInorder(root.left);
+		System.out.print(root.getData() + " ");
+		printInorder(root.right);
+	}
+
 	@Override
 	public String toString() {
-		return root.data+" ";
+		return root.getData()+" ";
 	}
 }

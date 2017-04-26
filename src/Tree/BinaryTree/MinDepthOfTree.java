@@ -19,16 +19,16 @@ public class MinDepthOfTree {
 		System.out.println("Min Depth of this tree : " + getMinDepth(tree.root));
 	}
 
-	private static int getMinDepth(BinarySearchTree.Node root) {
+	private static int getMinDepth(Tree.BinarySearchTree.Node root) {
 		if (root == null) {
 			return 0;
 		}
 		//isLeaf ?
-		if (root.getLeft() == null || root.getRight() == null) {
+		if (root.left == null || root.right == null) {
 			return 1;
 		}
-		int leftDepth = root.getLeft() != null ? getMinDepth(root.getLeft()) : Integer.MAX_VALUE;
-		int rightDepth = root.getRight() != null ? getMinDepth(root.getRight()) : Integer.MAX_VALUE;
+		int leftDepth = root.left != null ? getMinDepth(root.left) : Integer.MAX_VALUE;
+		int rightDepth = root.right != null ? getMinDepth(root.right) : Integer.MAX_VALUE;
 		return 1 + Math.min(leftDepth, rightDepth);
 	}
 }

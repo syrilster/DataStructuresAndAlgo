@@ -23,7 +23,7 @@ public class PrintRootToLeafPath {
 		printRootToLeafPaths(tree.root);
 	}
 
-	private static void printRootToLeafPaths(BinarySearchTree.Node node) {
+	private static void printRootToLeafPaths(Tree.BinarySearchTree.Node node) {
 		if (node == null) {
 			return;
 		}
@@ -31,17 +31,17 @@ public class PrintRootToLeafPath {
 		printRootToLeafPaths(node, pathList);
 	}
 
-	private static void printRootToLeafPaths(BinarySearchTree.Node node, ArrayList<Integer> pathList) {
+	private static void printRootToLeafPaths(Tree.BinarySearchTree.Node node, ArrayList<Integer> pathList) {
 		if(node == null){
 			return;
 		}
 		pathList.add(node.getData());
-		if (node.getLeft() == null && node.getRight() == null) {
+		if (node.left == null && node.right == null) {
 			printPath(pathList);
 			return;
 		}
-		printRootToLeafPaths(node.getLeft(), new ArrayList<>(pathList));
-		printRootToLeafPaths(node.getRight(), new ArrayList<>(pathList));
+		printRootToLeafPaths(node.left, new ArrayList<>(pathList));
+		printRootToLeafPaths(node.right, new ArrayList<>(pathList));
 	}
 
 	private static void printPath(ArrayList<Integer> pathList) {

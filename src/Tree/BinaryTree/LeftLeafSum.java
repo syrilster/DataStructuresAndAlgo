@@ -22,22 +22,22 @@ public class LeftLeafSum {
 		System.out.println(leftLeavesSum);
 	}
 
-	private static void findLeftLeavesSum(BinarySearchTree.Node root) {
+	private static void findLeftLeavesSum(Tree.BinarySearchTree.Node root) {
 		if (root == null) {
 			return;
 		}
-		if (isLeafNode(root.getLeft())) {
-			leftLeavesSum += root.getLeft().getData();
+		if (isLeafNode(root.left)) {
+			leftLeavesSum += root.left.getData();
 		}
-		findLeftLeavesSum(root.getLeft());
-		findLeftLeavesSum(root.getRight());
+		findLeftLeavesSum(root.left);
+		findLeftLeavesSum(root.right);
 	}
 
-	private static boolean isLeafNode(BinarySearchTree.Node node) {
+	private static boolean isLeafNode(Tree.BinarySearchTree.Node node) {
 		if (node == null) {
 			return false;
 		}
-		if (node.getLeft() == null && node.getRight() == null) {
+		if (node.left == null && node.right == null) {
 			return true;
 		}
 		return false;

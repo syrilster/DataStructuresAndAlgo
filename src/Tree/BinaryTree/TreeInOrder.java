@@ -1,6 +1,6 @@
 package Tree.BinaryTree;
 
-import Tree.BinarySearchTree.BinarySearchTree;
+import Tree.BinarySearchTree.*;
 
 /**
  * @author ssadasivan
@@ -19,12 +19,12 @@ public class TreeInOrder {
 		printInOrder(bst.root);
 	}
 
-	private static void printInOrder(BinarySearchTree.Node node) {
+	private static void printInOrder(Tree.BinarySearchTree.Node node) {
 		if(node == null){
 			return;
 		}
-		printInOrder(node.getLeft());
+		printInOrder(node.left);
 		System.out.print(node.getData() + " ");
-		printInOrder(node.getRight());
+		printInOrder(node.right);
 	}
 }

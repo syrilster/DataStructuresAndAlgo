@@ -25,7 +25,7 @@ public class LeftViewOfTree {
 		printLeftView(tree.root, 0);
 	}
 
-	private static void printLeftView(BinarySearchTree.Node node, int currentLevel) {
+	private static void printLeftView(Tree.BinarySearchTree.Node node, int currentLevel) {
 		if (node == null) {
 			return;
 		}
@@ -33,7 +33,7 @@ public class LeftViewOfTree {
 			System.out.print(node.getData() + " ");
 			maxLevelSeenSoFar = currentLevel;
 		}
-		printLeftView(node.getLeft(), currentLevel + 1);
-		printLeftView(node.getRight(), currentLevel + 1);
+		printLeftView(node.left, currentLevel + 1);
+		printLeftView(node.right, currentLevel + 1);
 	}
 }

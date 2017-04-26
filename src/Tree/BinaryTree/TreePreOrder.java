@@ -19,12 +19,12 @@ public class TreePreOrder {
 		printPostOrder(bst.root);
 	}
 
-	private static void printPostOrder(BinarySearchTree.Node node) {
+	private static void printPostOrder(Tree.BinarySearchTree.Node node) {
 		if(node == null){
 			return;
 		}
 		System.out.print(node.getData() + " ");
-		printPostOrder(node.getLeft());
-		printPostOrder(node.getRight());
+		printPostOrder(node.left);
+		printPostOrder(node.right);
 	}
 }

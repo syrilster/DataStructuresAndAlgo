@@ -22,17 +22,17 @@ public class LevelOrderTraversal {
 		printLevelOrder(bst.root);
 	}
 
-	private static void printLevelOrder(BinarySearchTree.Node node) {
-		Queue<BinarySearchTree.Node> queue = new LinkedList<>();
+	private static void printLevelOrder(Tree.BinarySearchTree.Node node) {
+		Queue<Tree.BinarySearchTree.Node> queue = new LinkedList<>();
 		queue.add(node);
 		while (!queue.isEmpty()) {
-			BinarySearchTree.Node tempNode = queue.remove();
+			Tree.BinarySearchTree.Node tempNode = queue.remove();
 			System.out.print(tempNode.getData() + " ");
-			if (tempNode.getLeft() != null) {
-				queue.add(tempNode.getLeft());
+			if (tempNode.left != null) {
+				queue.add(tempNode.left);
 			}
-			if (tempNode.getRight() != null) {
-				queue.add(tempNode.getRight());
+			if (tempNode.right != null) {
+				queue.add(tempNode.right);
 			}
 		}
 	}
