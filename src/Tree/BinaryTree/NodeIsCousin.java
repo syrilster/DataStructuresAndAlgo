@@ -34,9 +34,9 @@ public class NodeIsCousin {
 			return lev;
 
 		// Return level if Node is present in left subtree
-		int l = level(root.left, node, lev + 1);
-		if (l != 0)
-			return l;
+		int level = level(root.left, node, lev + 1);
+		if (level != 0)
+			return level;
 
 		// Else search in right subtree
 		return level(root.right, node, lev + 1);
@@ -45,11 +45,10 @@ public class NodeIsCousin {
 	// Returns 1 if a and b are cousins, otherwise 0
 	boolean isCousin(Node root, Node nodeOne, Node nodeTwo)
 	{
-		// 1. The two Nodes should be on the same level
-		//       in the binary tree.
-		// 2. The two Nodes should not be siblings (means
-		//    that they should not have the same parent
-		//    Node).
+		/*1. The two Nodes should be on the same level
+		       in the binary tree.
+		2. The two Nodes should not be siblings (means
+		   that they should not have the same parent Node).*/
 		return ((level(root, nodeOne, 1) == level(root, nodeTwo, 1)) &&
 				(!isSibling(root, nodeOne, nodeTwo)));
 	}
@@ -70,7 +69,7 @@ public class NodeIsCousin {
 
 		Node Node1, Node2;
 		Node1 = tree.root.left.left;
-		Node2 = tree.root.left.right;
+		Node2 = tree.root.right.right;
 		if (tree.isCousin(tree.root, Node1, Node2))
 			System.out.println("Yes");
 		else

@@ -22,6 +22,6 @@ public class CheckTreeIsBST {
 		if (node.getData() < min || node.getData() > max) {
 			return false;
 		}
-		return (isBSTUtil(node.getLeft(), min, node.getData() - 1) && isBSTUtil(node.getRight(), node.getData() + 1, max));
+		return (isBSTUtil(node.getLeft(), min, node.getData()) && isBSTUtil(node.getRight(), node.getData(), max));
 	}
 }
