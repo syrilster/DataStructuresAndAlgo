@@ -5,5 +5,6 @@ public class TrieTest {
         Trie trie = new Trie();
         trie.insert("abc");
         System.out.println(trie.search("abc"));
+        System.out.println(trie.search("bca"));
     }
 }
