@@ -27,7 +27,7 @@ public class Trie {
 
     private void insertRecursive(TrieNode current, String word, int index) {
         if (index == word.length()) {
-            // This is to handle endofWord
+            // This is to handle end of Word
             current.endOfWord = true;
             return;
         }
@@ -43,7 +43,7 @@ public class Trie {
         insertRecursive(node, word, index + 1);
     }
 
-    public boolean search(String word) {
+    boolean search(String word) {
         return searchRecursive(root, word, 0);
     }
 
@@ -60,6 +60,38 @@ public class Trie {
             return false;
         }
         return searchRecursive(node, word, index + 1);
+    }
+
+    /**
+     * Delete word from trie.
+     */
+    public void delete(String word) {
+        delete(root, word, 0);
+    }
+
+    private boolean delete(TrieNode current, String word, int index) {
+        if (index == word.length()) {
+            //when end of word is reached only delete if currrent.endOfWord is true.
+            if (!current.endOfWord)
+                return false;
+            //In case of delete abc, we can't delete the next node as abcd will also be lost. So set the flag to false
+            // as it does not give search result.
+            current.endOfWord = false;
+            return current.children.size() == 0;
+        }
+
+        char searchLetter = word.charAt(index);
+        TrieNode node = current.children.get(searchLetter);
+        if (node == null)
+            return false;
+
+        boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
+
+        if (shouldDeleteCurrentNode) {
+            current.children.remove(searchLetter);
+            return current.children.size() == 0;
+        }
+        return false;
     }
 
 }
